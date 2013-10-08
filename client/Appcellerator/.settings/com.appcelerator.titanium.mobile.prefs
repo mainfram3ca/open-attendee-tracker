@@ -1,0 +1,9 @@
+android/ATTR_PROJECT_NAME=Open Attendee Tracker
+android/abi=armeabi
+android/distribute_path=/home/jakendall/Android/OpenAttendee
+android/keystore_alias=Open Attendee Tracker
+android/keystore_password=Just4Thesake
+android/keystore_path=/home/jakendall/Android/Open Attendee Tracker/keystore
+android/recent_output=/home/jakendall/Android/OpenAttendee
+android/sdk_version=Google APIs Android 2.2
+eclipse.preferences.version=1

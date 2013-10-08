@@ -1,0 +1,34 @@
+### Requirements
+
+* PostgreSQL database with three local users (eg. human, vendor, admin) and populated with the contents of 'schema.sql'
+* The 'phpqrcode' library
+* The 'FPDF' library
+
+### Core Component Installation
+
+* apt-get install libapache2-mod-php5 postgresql php5-pgsql php5-gd
+* echo "CREATE DATABASE OAT" | sudo -u postgres psql
+* sudo -u postgres psql OAT < schema.sql
+
+### Library Installation
+
+#### FPDF
+
+* Download current from: http://fpdf.org/en/download.php
+* unzip / tar -zxvf (as appropriate
+* copy to basepath
+* most important files are the font directory and fpdf.php
+
+#### phpqrcode
+
+* do stuff here
+
+### Configuration Duties
+
+#### set up admin users
+
+* do stuff here
+
+#### ensure that barcodes work
+
+* test with vendor auth + sample output
