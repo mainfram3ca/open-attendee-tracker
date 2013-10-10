@@ -25,7 +25,7 @@
         </orientations>
     </iphone>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-    	        <manifest android:installLocation="preferExternal" android:versionCode="1" android:versionName="1.0"/>
+    	        <manifest android:installLocation="preferExternal" android:versionCode="2" android:versionName="1.0"/>
 	</android>
     <mobileweb>
         <precache/>
@@ -48,5 +48,5 @@
         <target device="mobileweb">false</target>
     </deployment-targets>
     <sdk-version>3.1.2.GA</sdk-version>
-    <property name="ti.deploytype">test</property>
+    <property name="ti.deploytype">production</property>
 </ti:app>

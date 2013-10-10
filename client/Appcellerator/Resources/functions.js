@@ -317,7 +317,8 @@ function OAT_Badge_Scan_Dialog(data, user_name, text) {
 function OAT_Badge_Scan_Save(data, text) {
 	Ti.API.info("User Key: " + data['key']);
 	if (data['id'] != undefined) {
-		var id = db_updateScan(data['id'], text);
+		db_updateScan(data['id'], text);
+		var id = data['id'];
 	} else {
 		var id = db_putScan(data['key'], text, 0);
 	}
