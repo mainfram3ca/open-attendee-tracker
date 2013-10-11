@@ -132,6 +132,7 @@ function OAT_Login(scan_code) {
 		var Data = JSON.parse(response);
 		Ti.API.info("Response: " + response);
 		if (Data.response == 200) {
+			scancodeItem.valueData = scan_code;
 			config.loggedin = true;
 			config.config = Data;
 			OAT_downloadimg(Data);
@@ -216,8 +217,13 @@ function OAT_SyncUsers_Request(pin) {
 		if (Data.response == 200) {
 			OAT_SyncUsers_Response(Data);
 		} else if (Data.response == 302) {
-			config.loggedin = false;
-			alert ("You were logged out - you need to relogin");
+			if (scancodeItem.valueData != undefined) {
+				// We've been logged in before, lets log in again
+				OAT_Login(scancodeItem.valueData);
+			} else {
+				config.loggedin = false;
+				alert ("You were logged out - you need to relogin");
+			}
 		}
 		OAT_Working(false);
 	 };
@@ -367,8 +373,13 @@ function OAT_Send_Scans() {
 				OAT_Logout_Callback();
 			}
 		} else if (Data.response == 302) {
-			config.loggedin = false;
-			alert ("You were logged out - you need to relogin");
+			if (scancodeItem.valueData != undefined) {
+				// We've been logged in before, lets log in again
+				OAT_Login(scancodeItem.valueData);
+			} else {
+				config.loggedin = false;
+				alert ("You were logged out - you need to relogin");
+			}
 		} else {
 			showMessageTimeout('Attendee scan sync failed.');
 		}
@@ -461,6 +472,8 @@ function OAT_Logout_Callback() {
 	} else {
 		// All the scans were sent, lets do some cleanup
 		db_remove();
+		keychainItem.scan_code = undefined;
+		keychainItem.key = undefined;
 		var activity = Titanium.Android.currentActivity; 
 		activity.finish();
 	}

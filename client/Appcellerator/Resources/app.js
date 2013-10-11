@@ -63,6 +63,15 @@ Barcode.allowMenu = false;
 Barcode.allowInstructions = false;
 Barcode.useLED = false;
 
+// Init the keychain and try see if we have a key
+var keychain = require('com.obscure.keychain');
+var scancodeItem = keychain.createKeychainItem('localkey');
+if (scancodeItem.valueData != undefined) {
+	// We've been logged in before, lets log in again
+	OAT_Login(scancodeItem.valueData);
+};
+
+
 // Initialize the DB
 db_init();
 
