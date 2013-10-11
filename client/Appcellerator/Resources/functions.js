@@ -28,12 +28,12 @@ function ScanCode(keepopen) {
 	//ScanCode_Intent();
 	// Test the login without the need to accutally scan a code
 	// data = {result: contents, format: "QR_CODE"};
+	config.keepon = keepopen;
 	if (config.loggedin == false) {
 		ScanBarCode(false);
 	} else if (keepopen == false) {
 		ScanBarCode(false);
 	} else {
-		config.keepon = true;
 		ScanBarCode(true);
 	}
 }

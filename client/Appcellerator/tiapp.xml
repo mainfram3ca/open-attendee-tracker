@@ -4,7 +4,7 @@
     <version>1.0</version>
     <publisher>Mainfram3</publisher>
     <url>http://www.mainfram3.ca</url>
-    <description>Android tool for Open Attendee Tracker</description>
+    <description>Android client for Open Attendee Tracker</description>
     <copyright>2013 by Mainfram3</copyright>
     <icon>appicon.png</icon>
     <persistent-wifi>false</persistent-wifi>
@@ -13,7 +13,7 @@
     <statusbar-hidden>false</statusbar-hidden>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
-    <analytics>true</analytics>
+    <analytics>false</analytics>
     <guid>2ffb99ed-cd7a-44a2-89f1-6ca69c79fe70</guid>
     <property name="ti.ui.defaultunit" type="string">system</property>
     <iphone>
