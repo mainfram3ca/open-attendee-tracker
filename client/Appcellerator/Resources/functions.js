@@ -472,8 +472,7 @@ function OAT_Logout_Callback() {
 	} else {
 		// All the scans were sent, lets do some cleanup
 		db_remove();
-		keychainItem.scan_code = undefined;
-		keychainItem.key = undefined;
+		scancodeItem.reset();
 		var activity = Titanium.Android.currentActivity; 
 		activity.finish();
 	}
